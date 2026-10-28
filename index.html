@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiệm Cà Phê Mùa Thu - Chill Coffee & Sounds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-icon">☕</span>
+        <span class="logo-text">Cà Phê Mùa Thu</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#menu">Thực đơn</a>
+        <a href="#mood">Hôm nay uống gì?</a>
+        <a href="#chill-station">Góc Thư Giãn</a>
+        <a href="#guestbook">Sổ Lưu Bút</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" title="Chuyển chế độ sáng/tối" aria-label="Đổi giao diện">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Mở menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge">✨ Chốn dừng chân an yên giữa phố thị</div>
+          <h1 class="hero-title">
+            Thưởng thức hương vị cà phê mộc và những giây phút lắng đọng.
+          </h1>
+          <p class="hero-desc">
+            Chào mừng bạn đến với góc nhỏ ấm cúng. Nơi có tách cà phê rang mộc thơm nồng, âm thanh mưa rơi dìu dịu và không gian để bạn đọc sách, làm việc hay trò chuyện cùng bạn bè.
+          </p>
+          <div class="hero-cta">
+            <a href="#menu" class="btn btn-primary">Xem Thực Đơn</a>
+            <a href="#chill-station" class="btn btn-secondary">
+              <span>🎧</span> Bật Âm Thanh Thư Giãn
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Hạt Robusta & Arabica Mộc</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24+</span>
+              <span class="stat-label">Món nước & bánh thủ công</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">4.9 ★</span>
+              <span class="stat-label">Từ hơn 1.200 khách ghé thăm</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="coffee-card-showcase">
+            <div class="floating-badge badge-top">🌿 Rang mộc nguyên bản</div>
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80" alt="Cà phê phin thơm ngon" class="hero-img" loading="lazy">
+            <div class="floating-badge badge-bottom">
+              <span class="dot live-dot"></span> Đang mở cửa đón bạn (07:00 - 22:30)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Mood / Drink Suggestion -->
+    <section class="mood-section" id="mood">
+      <div class="container">
+        <div class="section-header">
+          <span class="sub-title">Trợ lý cảm xúc</span>
+          <h2>Hôm nay bạn đang cảm thấy thế nào?</h2>
+          <p>Chọn một tâm trạng bên dưới để chúng mình gợi ý ly đồ uống thích hợp nhất dành cho bạn.</p>
+        </div>
+
+        <div class="mood-chips">
+          <button class="mood-btn active" data-mood="sleepy">🥱 Buồn ngủ & Mất tập trung</button>
+          <button class="mood-btn" data-mood="stress">🤯 Áp lực & Cần thư giãn</button>
+          <button class="mood-btn" data-mood="happy">🥰 Vui vẻ & Thích sự ngọt ngào</button>
+          <button class="mood-btn" data-mood="explore">🧭 Thích trải nghiệm điều mới lạ</button>
+        </div>
+
+        <div class="mood-result-card" id="moodResult">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <span class="sub-title">Hương vị nguyên bản</span>
+          <h2>Thực Đơn Được Yêu Thích</h2>
+          <p>Mỗi món thức uống đều được pha chế bằng niềm say mê và nguyên liệu tươi ngon nhất.</p>
+        </div>
+
+        <div class="menu-filters">
+          <button class="filter-btn active" data-filter="all">Tất cả</button>
+          <button class="filter-btn" data-filter="coffee">Cà Phê Truyền Thống</button>
+          <button class="filter-btn" data-filter="modern">Cà Phê Ý & Hiện Đại</button>
+          <button class="filter-btn" data-filter="tea">Trà & Trái Cây</button>
+          <button class="filter-btn" data-filter="pastry">Bánh Ngọt</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+          <!-- Menu items dynamically rendered via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Chill Audio & Focus Hub (Web Audio API) -->
+    <section class="chill-section" id="chill-station">
+      <div class="container">
+        <div class="section-header">
+          <span class="sub-title">Không gian tập trung & thư giãn</span>
+          <h2>Góc Âm Thanh & Pomodoro</h2>
+          <p>Bật tiếng mưa rơi, tiếng củi lách tách được tạo trực tiếp từ trình duyệt để học tập, làm việc hoặc đọc sách.</p>
+        </div>
+
+        <div class="chill-grid">
+          <!-- Audio Mixer -->
+          <div class="chill-card sound-mixer">
+            <div class="card-header">
+              <h3>🎧 Bàn Trộn Âm Thanh Tự Nhiên</h3>
+              <p>Âm thanh được tổng hợp trực tiếp bằng Web Audio API không phụ thuộc mạng.</p>
+            </div>
+
+            <div class="sound-tracks">
+              <!-- Rain sound -->
+              <div class="track-row">
+                <div class="track-info">
+                  <span class="track-icon">🌧️</span>
+                  <div>
+                    <strong>Tiếng Mưa Rơi</strong>
+                    <span class="track-sub">Mưa rào êm dịu bên cửa sổ</span>
+                  </div>
+                </div>
+                <div class="track-controls">
+                  <input type="range" min="0" max="100" value="0" class="sound-slider" id="rainSlider" aria-label="Âm lượng mưa rơi">
+                  <button class="toggle-sound-btn" data-sound="rain">Bật</button>
+                </div>
+              </div>
+
+              <!-- Campfire sound -->
+              <div class="track-row">
+                <div class="track-info">
+                  <span class="track-icon">🪵</span>
+                  <div>
+                    <strong>Lửa Trại Ấm Áp</strong>
+                    <span class="track-sub">Tiếng than củi nổ lách tách</span>
+                  </div>
+                </div>
+                <div class="track-controls">
+                  <input type="range" min="0" max="100" value="0" class="sound-slider" id="fireSlider" aria-label="Âm lượng lửa trại">
+                  <button class="toggle-sound-btn" data-sound="fire">Bật</button>
+                </div>
+              </div>
+
+              <!-- White/Pink Noise sound -->
+              <div class="track-row">
+                <div class="track-info">
+                  <span class="track-icon">🍃</span>
+                  <div>
+                    <strong>Gió Thoảng & Sóng Biển</strong>
+                    <span class="track-sub">Âm thanh trắng giúp xoa dịu não bộ</span>
+                  </div>
+                </div>
+                <div class="track-controls">
+                  <input type="range" min="0" max="100" value="0" class="sound-slider" id="windSlider" aria-label="Âm lượng gió thoảng">
+                  <button class="toggle-sound-btn" data-sound="wind">Bật</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mixer-footer">
+              <button id="masterMuteBtn" class="btn btn-outline">Tắt tất cả âm thanh</button>
+              <button id="relaxPresetBtn" class="btn btn-accent">Bật chế độ "Đêm Mưa"</button>
+            </div>
+          </div>
+
+          <!-- Pomodoro Focus Timer -->
+          <div class="chill-card pomodoro-timer">
+            <div class="card-header">
+              <h3>⏱️ Đồng Hồ Tập Trung (Pomodoro)</h3>
+              <p>25 phút tập trung sâu, 5 phút nghỉ ngơi thư thái.</p>
+            </div>
+
+            <div class="timer-display">
+              <div class="timer-circle">
+                <span class="timer-time" id="timerTime">25:00</span>
+                <span class="timer-status" id="timerStatus">Sẵn sàng bắt đầu</span>
+              </div>
+            </div>
+
+            <div class="timer-actions">
+              <button class="btn btn-primary" id="startTimerBtn">Bắt Đầu</button>
+              <button class="btn btn-secondary" id="pauseTimerBtn" disabled>Tạm Dừng</button>
+              <button class="btn btn-outline" id="resetTimerBtn">Đặt Lại</button>
+            </div>
+
+            <div class="timer-modes">
+              <button class="timer-mode-btn active" data-minutes="25" data-label="Tập trung">25 phút làm việc</button>
+              <button class="timer-mode-btn" data-minutes="5" data-label="Nghỉ ngắn">5 phút nghỉ</button>
+              <button class="timer-mode-btn" data-minutes="15" data-label="Nghỉ dài">15 phút nghỉ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guestbook Section (Local Storage) -->
+    <section class="guestbook-section" id="guestbook">
+      <div class="container">
+        <div class="section-header">
+          <span class="sub-title">Góc sẻ chia</span>
+          <h2>Gửi Lời Nhắn Đến Tiệm Cà Phê</h2>
+          <p>Để lại một mẩu tin nhắn hoặc cảm xúc của bạn khi ghé thăm góc nhỏ này nhé!</p>
+        </div>
+
+        <div class="guestbook-wrapper">
+          <form class="guestbook-form" id="guestbookForm">
+            <div class="form-group">
+              <label for="guestName">Tên hoặc biệt danh của bạn</label>
+              <input type="text" id="guestName" placeholder="VD: Mây lang thang, Minh Anh..." required maxlength="40">
+            </div>
+
+            <div class="form-group">
+              <label for="guestRating">Bạn cảm thấy góc quán hôm nay thế nào?</label>
+              <div class="star-rating" id="starRating">
+                <span class="star selected" data-value="1">★</span>
+                <span class="star selected" data-value="2">★</span>
+                <span class="star selected" data-value="3">★</span>
+                <span class="star selected" data-value="4">★</span>
+                <span class="star selected" data-value="5">★</span>
+                <input type="hidden" id="ratingValue" value="5">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="guestMessage">Lời nhắn gửi gắm</label>
+              <textarea id="guestMessage" rows="3" placeholder="Viết vài dòng chia sẻ về ngày hôm nay của bạn..." required maxlength="250"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Dán Lời Nhắn Lên Bảng 📌</button>
+          </form>
+
+          <div class="guestbook-board-wrap">
+            <div class="board-header">
+              <h3>Bảng Giấy Nhớ Của Quán 📝</h3>
+              <span id="noteCount" class="note-count">4 lời nhắn</span>
+            </div>
+            <div class="notes-grid" id="notesGrid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <div class="brand-logo footer-logo">
+          <span class="logo-icon">☕</span>
+          <span class="logo-text">Cà Phê Mùa Thu</span>
+        </div>
+        <p>Góc nhỏ yên ả dành cho những tâm hồn yêu mến hương cà phê mộc và tiếng mưa rơi.</p>
+        <p class="copyright">© 2026 Cà Phê Mùa Thu. Dự án web đơn giản & tinh gọn.</p>
+      </div>
+
+      <div class="footer-details">
+        <div class="footer-col">
+          <h4>Thời Gian Hoạt Động</h4>
+          <p>Thứ 2 - Thứ 6: 07:00 - 22:30</p>
+          <p>Thứ 7 - CN: 06:30 - 23:00</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Vị Trí & Liên Hệ</h4>
+          <p>📍 123 Đường Hoa Sữa, Quận Bình Yên</p>
+          <p>📞 0987 654 321</p>
+          <p>✉️ hi@caphemuathu.vn</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
